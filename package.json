@@ -1,0 +1,16 @@
+{
+  "name": "blogging-website",
+  "version": "1.0.0",
+  "description": "A blogging website project",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "parcel": "^2.0.0",
+    "htmlhint": "^0.16.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0"
+  }
+}
