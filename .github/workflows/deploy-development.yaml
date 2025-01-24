@@ -22,17 +22,12 @@ jobs:
         with:
           path: ./dist
 
-deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+  deploy:
     needs: build
+    runs-on: ubuntu-latest
     permissions:
       id-token: write
-      pages: write
       contents: read
     steps:
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4
