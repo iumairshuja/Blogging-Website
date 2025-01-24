@@ -1,0 +1,26 @@
+name: PR Validation
+on:
+  pull_request:
+    branches: [develop]
+jobs:
+  linting:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4       
+      - uses: actions/setup-node@v4     
+        with:
+          node-version: 20
+      - name: Lint HTML
+        run: npx htmlhint@1.1.4 "src/*.html" 
+      - name: Lint CSS
+        run: npx stylelint@15.11.0 "styles/*.css"  
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+      - name: Build 
+        run: npm run build  
