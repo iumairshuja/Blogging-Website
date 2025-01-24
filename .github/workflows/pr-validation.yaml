@@ -10,6 +10,7 @@ jobs:
       - uses: actions/setup-node@v4     
         with:
           node-version: 20
+      run: npm install htmlhint stylelint
       - name: Lint HTML
         run: npx htmlhint@1.1.4 "src/*.html" 
       - name: Lint CSS
