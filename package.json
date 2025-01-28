@@ -4,7 +4,7 @@
   "description": "A blogging website project",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build ./src/index.html --dist-dir ./dist --public-url ./"
   },
   "devDependencies": {
     "htmlhint": "^0.16.3",
